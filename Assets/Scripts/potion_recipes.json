@@ -1,60 +1,67 @@
-{ "recipes" : [
-  {
-    "id" : 1,
-    "name" : "Health Potion",
-    "description" : "A bitter potion sure to heal any battle wounds.",
-    "tier" : 1,
-    "ingredients" : {
-      "ingredient" : [
-        {
-          "ingredient_name": "Juniper Berry",
-          "quantity": 1
-        },
-        {
-          "ingredient_name": "Wheat",
-          "quantity": 1
-        },
-        {
-          "ingredient_name": "Water",
-          "quantity": 1
-        }
-      ]},
-    "cost" : 2
-  },
-  {
-    "id" : 2,
-    "name" : "Mana Potion",
-    "description" : "A sour potion right up your favorite wizard's alley",
-    "tier" : 1,
-    "ingredients" : {
-      "ingredient" : [
-        {
-          "ingredient_name": "Sunflower",
-          "quantity": 1
-        },
-        {
-          "ingredient_name": "Holly Berry",
-          "quantity": 2
-        }
-      ]},
-    "cost" : 3
-  },
-  {
-    "id" : 3,
-    "name" : "Poison Potion",
-    "description" : "A sickly sweat potion sure to - wait, why do you want this?",
-    "tier" : 1,
-    "ingredients" : {
-      "ingredient" : [
-        {
-          "ingredient_name": "Swamp Water",
-          "quantity": 1
-        },
-        {
-          "ingredient_name": "Rose",
-          "quantity": 2
-        }
-      ]},
-    "cost" : 2
-  }
-]}
+{
+  "potions" : [
+    {
+      "id" : 1,
+      "name" : "Health Potion",
+      "description" : "A bitter potion sure to heal any battle wounds.",
+      "tier" : 1,
+      "ingredients" : {
+        "ingredient" : [
+          {
+            "ingredient_name": "Juniper Berry",
+            "quantity": 1
+          },
+          {
+            "ingredient_name": "Wheat",
+            "quantity": 1
+          },
+          {
+            "ingredient_name": "Water",
+            "quantity": 1
+          }
+        ]},
+      "cost" : 2,
+      "grind_time" : 3.0,
+      "cook_time" : 4.0
+    },
+    {
+      "id" : 2,
+      "name" : "Mana Potion",
+      "description" : "A sour potion right up your favorite wizard's alley",
+      "tier" : 1,
+      "ingredients" : {
+        "ingredient" : [
+          {
+            "ingredient_name": "Sunflower",
+            "quantity": 1
+          },
+          {
+            "ingredient_name": "Holly Berry",
+            "quantity": 2
+          }
+        ]},
+      "cost" : 3,
+      "grind_time" : 6.0,
+      "cook_time" : 9.0
+    },
+    {
+      "id" : 3,
+      "name" : "Poison Potion",
+      "description" : "A sickly sweat potion sure to - wait, why do you want this?",
+      "tier" : 1,
+      "ingredients" : {
+        "ingredient" : [
+          {
+            "ingredient_name": "Swamp Water",
+            "quantity": 1
+          },
+          {
+            "ingredient_name": "Rose",
+            "quantity": 2
+          }
+        ]},
+      "cost" : 2,
+      "grind_time" : 5.0,
+      "cook_time" : 14.0
+    }
+  ]}
