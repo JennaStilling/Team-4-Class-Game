@@ -1,0 +1,25 @@
+{
+    "potions": [
+        { 
+          "id": 1,
+          "name": "Health Potion",
+          "description": "A bitter potion sure to heal any battle wounds.",
+          "tier": 1,
+          "cost": 2
+        },
+        {
+          "id": 2,
+          "name": "Mana Potion",
+          "description": "A sour potion right up your favorite wizard's alley",
+          "tier": 1,
+          "cost": 3
+        },
+        {
+          "id": 3,
+          "name": "Poison Potion",
+          "description": "A sickly sweet potion sure to - wait, why do you want this?",
+          "tier": 1,
+          "cost": 2
+        }
+    ]
+}
