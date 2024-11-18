@@ -5,10 +5,31 @@ using UnityEngine;
 namespace Player_Potion_Making
 {
     [System.Serializable]
+    public class OrderPotion
+    {
+        public int id;
+        public int quantity;
+
+        public OrderPotion()
+        {
+            id = 1;
+            quantity = 1;
+        }
+
+        public OrderPotion(int id, int quantity)
+        {
+            this.id = id;
+            this.quantity = quantity;
+        }
+    }
+    [System.Serializable]
     public class Order
     {
+        public int id;
+        public int profit = 0;
         public List<OrderPotion> potions;
-        private int _profit = 0;
+        public int day_unlocked;
+
 
         public Order()
         {
@@ -22,10 +43,10 @@ namespace Player_Potion_Making
         {
             foreach (var orderPotion in potions)
             {
-                _profit += (Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].cost * orderPotion.quantity);
+                profit += (Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].cost * orderPotion.quantity);
                 Debug.Log("Added potion - " + Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].name + " with a cost of " + (Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].cost * orderPotion.quantity));
             }
-            Debug.Log(_profit);
+            Debug.Log(profit);
         }
     }
 
