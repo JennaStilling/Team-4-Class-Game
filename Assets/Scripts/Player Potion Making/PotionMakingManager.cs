@@ -5,6 +5,7 @@ namespace Player_Potion_Making
     public class PotionMakingManager : MonoBehaviour
     {
         public static PotionMakingManager Instance;
+        
 
         private void Awake()
         {
@@ -18,5 +19,7 @@ namespace Player_Potion_Making
                 Destroy(gameObject);
             }
         }
+
+        public int CurrentDay { get; private set; }
     }
 }
