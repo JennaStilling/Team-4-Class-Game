@@ -13,17 +13,16 @@ namespace Jenna
         {
             _rectTransform = GetComponent<RectTransform>();
             _canvasGroup = GetComponent<CanvasGroup>();
-            Debug.Log("awake");
         }
         
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("OnPointerDown");
+          //  Debug.Log("OnPointerDown");
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            Debug.Log("OnBeginDrag");
+         //   Debug.Log("OnBeginDrag");
             _canvasGroup.blocksRaycasts = false;
         }
 
@@ -35,7 +34,7 @@ namespace Jenna
 
         public void OnDrag(PointerEventData eventData)
         {
-            Debug.Log("OnDrag");
+           // Debug.Log("OnDrag");
             _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
         }
     }

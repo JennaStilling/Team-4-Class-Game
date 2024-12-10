@@ -128,7 +128,7 @@ namespace Player_Potion_Making
             foreach (var order in orderList.orders)
             {
                 _orderData.Add(order.id, order);
-                Debug.Log(_orderData[order.id].GetProfit());
+                //Debug.Log(_orderData[order.id].GetProfit());
             }
         }
 

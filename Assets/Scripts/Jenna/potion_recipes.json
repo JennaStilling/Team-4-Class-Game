@@ -7,9 +7,9 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Juniper Berry", "quantity": 1 },
-          { "ingredient_name": "Wheat", "quantity": 1 },
-          { "ingredient_name": "Water", "quantity": 1 }
+          { "ingredient_name": "Juniper Berry", "id": 5, "quantity": 1 },
+          { "ingredient_name": "Wheat", "id": 3, "quantity": 1 },
+          { "ingredient_name": "Water", "id": 18, "quantity": 1 }
         ]
       },
       "cost": 2,
@@ -23,8 +23,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Sunflower", "quantity": 1 },
-          { "ingredient_name": "Holly Berry", "quantity": 2 }
+          { "ingredient_name": "Sunflower", "id": 1, "quantity": 1 },
+          { "ingredient_name": "Holly Berry", "id": 15, "quantity": 2 }
         ]
       },
       "cost": 3,
@@ -38,8 +38,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Swamp Water", "quantity": 1 },
-          { "ingredient_name": "Rose", "quantity": 2 }
+          { "ingredient_name": "Swamp Water", "id": 18, "quantity": 1 },
+          { "ingredient_name": "Rose", "id": 2, "quantity": 2 }
         ]
       },
       "cost": 4,
@@ -53,8 +53,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Wheat", "quantity": 1 },
-          { "ingredient_name": "Shell", "quantity": 2 }
+          { "ingredient_name": "Wheat", "id": 3, "quantity": 1 },
+          { "ingredient_name": "Shell", "id": 9, "quantity": 2 }
         ]
       },
       "cost": 5,
@@ -68,8 +68,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Dandelion", "quantity": 2 },
-          { "ingredient_name": "Algae", "quantity": 2 }
+          { "ingredient_name": "Dandelion", "id": 4, "quantity": 2 },
+          { "ingredient_name": "Algae", "id": 11, "quantity": 2 }
         ]
       },
       "cost": 6,
@@ -83,8 +83,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Carrot", "quantity": 2 },
-          { "ingredient_name": "Water Lily", "quantity": 2 }
+          { "ingredient_name": "Carrot", "id": 7, "quantity": 2 },
+          { "ingredient_name": "Water Lily", "id": 8, "quantity": 2 }
         ]
       },
       "cost": 7,
@@ -98,8 +98,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Violet", "quantity": 3 },
-          { "ingredient_name": "Ice", "quantity": 2 }
+          { "ingredient_name": "Violet", "id": 14, "quantity": 1 },
+          { "ingredient_name": "Ice", "id": 20, "quantity": 1 }
         ]
       },
       "cost": 8,
@@ -113,8 +113,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "River Weed", "quantity": 4 },
-          { "ingredient_name": "Water Lily", "quantity": 2 }
+          { "ingredient_name": "River Weed", "id": 10, "quantity": 4 },
+          { "ingredient_name": "Water Lily", "id": 8, "quantity": 2 }
         ]
       },
       "cost": 9,
@@ -128,9 +128,9 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Spider Web", "quantity": 4 },
-          { "ingredient_name": "Bone", "quantity": 6 },
-          { "ingredient_name": "Blue Bell", "quantity": 2 }
+          { "ingredient_name": "Spider Web", "id": 13, "quantity": 4 },
+          { "ingredient_name": "Bone", "id": 17, "quantity": 6 },
+          { "ingredient_name": "Blue Bell", "id": 6, "quantity": 2 }
         ]
       },
       "cost": 10,
@@ -144,9 +144,9 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Murky Water", "quantity": 1 },
-          { "ingredient_name": "Sunflower", "quantity": 5 },
-          { "ingredient_name": "Algae", "quantity": 2 }
+          { "ingredient_name": "Murky Water", "id": 19, "quantity": 1 },
+          { "ingredient_name": "Sunflower", "id": 1, "quantity": 5 },
+          { "ingredient_name": "Algae", "id": 11, "quantity": 2 }
         ]
       },
       "cost": 11,
@@ -160,10 +160,10 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Bone", "quantity": 8 },
-          { "ingredient_name": "Shell", "quantity": 4 },
-          { "ingredient_name": "Spider Web", "quantity": 4 },
-          { "ingredient_name": "Pine Cone", "quantity": 4 }
+          { "ingredient_name": "Bone", "id": 17, "quantity": 8 },
+          { "ingredient_name": "Shell", "id": 9, "quantity": 4 },
+          { "ingredient_name": "Spider Web", "id": 13, "quantity": 4 },
+          { "ingredient_name": "Pine Cone", "id": 16, "quantity": 4 }
         ]
       },
       "cost": 12,

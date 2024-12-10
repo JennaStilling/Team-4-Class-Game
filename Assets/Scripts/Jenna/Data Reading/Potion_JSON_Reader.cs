@@ -26,6 +26,7 @@ public class Potion_JSON_Reader : MonoBehaviour
     public class Ingredient
     {
         public string ingredient_name;
+        public int id;
         public int quantity;
     }
     
@@ -77,5 +78,15 @@ public class Potion_JSON_Reader : MonoBehaviour
     public Dictionary<int, Potion> GetPotionData()
     {
         return _potionData;
+    }
+
+    public Dictionary<int, Potion> GetPotionList()
+    {
+        return _potionData;
+    }
+
+    public Potion GetPotionById(int id)
+    {
+        return _potionData[id];
     }
 }
