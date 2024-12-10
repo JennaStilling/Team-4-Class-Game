@@ -20,5 +20,24 @@ namespace Jenna {
         }
 
         public int CurrentDay { get; private set; }
+        
+        public int PotionsRuined { get; set; }
+        public int OrdersRuined { get; set; }
+        
+        public int PotionsMade { get; set; }
+        public int OrdersComplete { get; set; }
+
+        void Update()
+        {
+            if (PotionsRuined >= 5 || OrdersRuined >= 3)
+            {
+                HandleGameOver();
+            }
+        }
+
+        private void HandleGameOver()
+        {
+            Debug.Log("Game over!");
+        }
     }
 }

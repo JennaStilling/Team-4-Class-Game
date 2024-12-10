@@ -7,11 +7,11 @@ namespace Composite
         private string _name { get; set; }
         private string _description { get; set; }
         private bool _isComplete;
-        private int _potionId; // Track potion ID
+        private int _potionId; 
 
         public Order(int potionId, string name, string description)
         {
-            _potionId = potionId; // Initialize with potion ID
+            _potionId = potionId;
             _name = name;
             _description = description;
             _isComplete = false;

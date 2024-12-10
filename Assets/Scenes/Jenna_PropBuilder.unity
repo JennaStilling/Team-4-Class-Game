@@ -2772,6 +2772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818224255}
   - component: {fileID: 1818224254}
+  - component: {fileID: 1818224256}
   m_Layer: 0
   m_Name: Potion_Loader
   m_TagString: Untagged
@@ -2809,6 +2810,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1818224256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818224253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8e3ee6bac04577adbfa0c056b270d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _potionMatsList:
+  - id: 1
+    texture: {fileID: 2800000, guid: ed8815c0d23ce4f45b62a9621110e195, type: 3}
+  - id: 2
+    texture: {fileID: 2800000, guid: f4c25ad483c6c954b8a6c8010d49c499, type: 3}
+  - id: 3
+    texture: {fileID: 2800000, guid: 77606352282d3cc4dab8ba9d48c69323, type: 3}
+  - id: 4
+    texture: {fileID: 2800000, guid: 048ef2f2a9e31f1439e730518e624a6b, type: 3}
+  - id: 5
+    texture: {fileID: 2800000, guid: 941352e2d2d715a4aa96cbab8289f8bc, type: 3}
+  - id: 6
+    texture: {fileID: 2800000, guid: a02e8e78a669e704682e44ef95881118, type: 3}
+  - id: 7
+    texture: {fileID: 2800000, guid: 88f09b3ac0922e74592ae1cbf5710e08, type: 3}
+  - id: 8
+    texture: {fileID: 2800000, guid: f5cd8490185d31544ac6ea4b3762977d, type: 3}
+  - id: 9
+    texture: {fileID: 2800000, guid: ab7a47327f2001149ae2ef905ca800ad, type: 3}
+  - id: 10
+    texture: {fileID: 2800000, guid: f28b010b34534234cbdee018d618c20f, type: 3}
+  - id: 11
+    texture: {fileID: 2800000, guid: 759b690e1098fcf48bbe31b73a14c208, type: 3}
 --- !u!1001 &1902206721
 PrefabInstance:
   m_ObjectHideFlags: 0

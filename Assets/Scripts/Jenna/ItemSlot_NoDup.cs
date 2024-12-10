@@ -7,7 +7,6 @@ namespace Jenna
 {
     public class ItemSlot_NoDup : MonoBehaviour, IDropHandler
     {
-        // Reference to the CompositeQuest (could be set via inspector or dynamically)
         public CompositeOrder compositeQuest;
 
         public void OnDrop(PointerEventData eventData)
