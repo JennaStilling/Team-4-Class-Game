@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f67005b22434032bc750b46ae57965c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potionId: 7
+  _potionId: 0
 --- !u!1001 &462976124
 PrefabInstance:
   m_ObjectHideFlags: 0

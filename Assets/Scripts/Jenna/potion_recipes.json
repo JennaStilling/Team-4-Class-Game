@@ -98,8 +98,8 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Violet", "id": 14, "quantity": 1 },
-          { "ingredient_name": "Ice", "id": 20, "quantity": 1 }
+          { "ingredient_name": "Violet", "id": 14, "quantity": 3 },
+          { "ingredient_name": "Ice", "id": 20, "quantity": 2 }
         ]
       },
       "cost": 8,

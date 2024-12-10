@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using Player_Potion_Making;
 
 namespace Jenna
@@ -9,22 +8,23 @@ namespace Jenna
     {
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log("OnDrop");
+            //Debug.Log("OnDrop");
+
             if (eventData.pointerDrag != null)
             {
                 UI_Potion potionReference = GetComponent<UI_Potion>();
                 potionReference.AddIngredient(eventData.pointerDrag.GetComponent<Ingredient>().GetId());
-               Destroy(eventData.pointerDrag);
-               
-               // Image image = GetComponent<Image>();
-               // if (image != null)
-               // {
-               //     image.color = Color.green;
-               // }
-               // else
-               // {
-               //     Debug.Log("was null");
-               // }
+                
+                // Get the dragging object reference from the DragDropUI component
+                DragDropUI dragDropUI = eventData.pointerDrag.GetComponent<DragDropUI>();
+                if (dragDropUI != null)
+                {
+                    GameObject draggingObject = dragDropUI.GetDraggingObject();
+                    if (draggingObject != null)
+                    {
+                        Destroy(draggingObject); // Destroy the copy instead of the original
+                    }
+                }
             }
         }
     }

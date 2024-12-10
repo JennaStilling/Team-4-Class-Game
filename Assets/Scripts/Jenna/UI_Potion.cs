@@ -20,11 +20,11 @@ namespace Jenna
         private List<int> _currentIngredients;
         [SerializeField] private int _potionId;
         private PotionState _currentState;
+        private Dictionary<int, Potion_JSON_Reader.Potion> _allPotionList;
         private Potion_JSON_Reader.Potion _potionReference;
 
         private void Awake()
         {
-            // _potionReference = GameObject.Find("Potion_Loader").GetComponent<Potion_JSON_Reader>().GetPotionById(_potionId);
             _currentIngredients = new List<int>();
             _currentState = PotionState.Empty;
         }
@@ -32,14 +32,6 @@ namespace Jenna
         public void SetPotionId(int id)
         {
             _potionId = id;
-        }
-
-        // Needed?
-        public UI_Potion(int potionId)
-        {
-            _currentIngredients = new List<int>();
-            _potionId = potionId;
-            _currentState = PotionState.Empty;
         }
         
         public void AddIngredient(int id)
@@ -50,50 +42,73 @@ namespace Jenna
         
         public void GrindIngredients()
         {
-            _potionReference = GameObject.Find("Potion_Loader").GetComponent<Potion_JSON_Reader>().GetPotionById(_potionId);
-            Debug.Log(_potionReference.name);
-    
-            // Check if the number of ingredients match
-            if (_currentIngredients.Count != _potionReference.ingredients.ingredient.Count)
+            _allPotionList = GameObject.Find("Potion_Loader").GetComponent<Potion_JSON_Reader>().GetPotionList();
+            Debug.Log("Ingredient Count: " + _currentIngredients.Count);
+            int neededIngredients = 0;
+            
+            // Check the count of ingredients first
+            foreach (var potionEntry in _allPotionList)
             {
-                Debug.Log("Ingredient count mismatch");
-                _currentState = PotionState.Failed;
-                HandleFailure();
-                return;
-            }
-    
-            // Compare each ingredient by both id and quantity
-            foreach (var ingredient in _potionReference.ingredients.ingredient)
-            {
-                if (_currentIngredients.Count(x => x == ingredient.id) != ingredient.quantity)
+                neededIngredients = 0;
+                Potion_JSON_Reader.Potion potion = potionEntry.Value;
+                Debug.Log("Checking " + potion.name);
+                
+                foreach (var ingredient in potion.ingredients.ingredient)
                 {
-                    Debug.Log("Ingredients mismatch for: " + ingredient.ingredient_name);
-                    _currentState = PotionState.Failed;
-                    HandleFailure();
+                    neededIngredients += ingredient.quantity;
+                }
+
+                if (_currentIngredients.Count != neededIngredients)
+                {
+                    // Debug.Log(potion.name + " needs " + neededIngredients);
+                    continue; 
+                }
+
+                bool isMatch = true;
+
+                // Then check the quantity of each ingredient
+                foreach (var ingredient in potion.ingredients.ingredient)
+                {
+                    int ingredientCount = _currentIngredients.Count(x => x == ingredient.id);
+                    if (ingredientCount != ingredient.quantity)
+                    {
+                        isMatch = false;
+                        break;
+                    }
+                }
+
+                if (isMatch) 
+                {
+                    _potionReference = potion; 
+                    // Debug.Log("Potion found: " + _potionReference.name);
+                    if (_currentState != PotionState.Empty)
+                    {
+                        if (_currentState == PotionState.Ground)
+                            Debug.Log("Ingredients have already been ground");
+                        else if (_currentState == PotionState.Brewed)
+                            Debug.Log("Potion has already been brewed");
+                        else
+                        {
+                            Debug.Log("Incorrect - unknown error");
+                        }
+                        _currentState = PotionState.Failed;
+                        HandleFailure();
+                    }
+                    else
+                    {
+                        Debug.Log("Grinding Ingredients");
+                        _potionId = potion.id;
+                        Debug.Log("Added potion id: " + _potionId);
+                        _currentState = PotionState.Ground;
+                    }
                     return;
                 }
             }
             
-            if (_currentState != PotionState.Empty)
-            {
-                if (_currentState == PotionState.Ground)
-                    Debug.Log("Ingredients have already been ground");
-                else if (_currentState == PotionState.Brewed)
-                    Debug.Log("Potion has already been brewed");
-                else
-                {
-                    Debug.Log("Incorrect - unknown error");
-                }
-                _currentState = PotionState.Failed;
-                HandleFailure();
-            }
-            else
-            {
-                Debug.Log("Grinding Ingredients");
-                _currentState = PotionState.Ground;
-            }
+            Debug.Log("No matching potion found for the ingredients.");
+            _currentState = PotionState.Failed;
+            HandleFailure();
         }
-
 
         public void BrewPotion()
         {

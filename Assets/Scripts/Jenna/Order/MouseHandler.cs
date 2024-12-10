@@ -7,7 +7,7 @@ public class MouseHandler : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Clicked mouse");
+            //Debug.Log("Clicked mouse");
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
