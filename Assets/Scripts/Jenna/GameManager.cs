@@ -19,13 +19,13 @@ namespace Jenna {
             }
         }
 
-        public int CurrentDay { get; private set; }
-        
-        public int PotionsRuined { get; set; }
-        public int OrdersRuined { get; set; }
-        
-        public int PotionsMade { get; set; }
-        public int OrdersComplete { get; set; }
+        public int PotionsRuined { get; set; } = 0;
+        public int OrdersRuined { get; set; } = 0;
+
+        public int PotionsMade { get; set; } = 0;
+        public int OrdersComplete { get; set; } = 0;
+
+        public int CoinCount { get; set; } = 100;
 
         void Update()
         {

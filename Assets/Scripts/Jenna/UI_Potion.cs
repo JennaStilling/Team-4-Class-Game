@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Data_Reading;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.UI; // Add this at the top of your file
+using UnityEngine.UI;
 
 namespace Jenna
 {
-    [Serializable]
+    [System.Serializable]
     public enum PotionState
     {
         Empty,
@@ -165,7 +163,8 @@ namespace Jenna
         public void HandleFailure()
         {
             Debug.Log("Potion discarded");
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            GameManager.Instance.PotionsRuined++;
         }
 
         public void Update()

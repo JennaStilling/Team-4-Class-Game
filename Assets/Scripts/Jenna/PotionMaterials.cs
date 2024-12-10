@@ -18,7 +18,6 @@ namespace Jenna
 
         private void Awake()
         {
-            // Convert List to Dictionary on start
             _potionMats = new Dictionary<int, Texture>();
             foreach (var pair in _potionMatsList)
             {
