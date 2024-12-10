@@ -147,11 +147,12 @@ namespace Player_Potion_Making
             }
         }
 
-        public void GenerateRandomOrder()
+        public int GenerateRandomOrder()
         {
             int i = Random.Range(0, 50);
-            Debug.Log("Order id: " + _orderData[i].id);
+            Debug.Log("Order id: " + _orderData[i+1].id);
             _orderData[i].CalculateProfit();
+            return i;
         }
     }
     

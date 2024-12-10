@@ -43,15 +43,14 @@ namespace Jenna
         public void GrindIngredients()
         {
             _allPotionList = GameObject.Find("Potion_Loader").GetComponent<Potion_JSON_Reader>().GetPotionList();
-            Debug.Log("Ingredient Count: " + _currentIngredients.Count);
+            // Debug.Log("Ingredient Count: " + _currentIngredients.Count);
             int neededIngredients = 0;
             
-            // Check the count of ingredients first
             foreach (var potionEntry in _allPotionList)
             {
                 neededIngredients = 0;
                 Potion_JSON_Reader.Potion potion = potionEntry.Value;
-                Debug.Log("Checking " + potion.name);
+                // Debug.Log("Checking " + potion.name);
                 
                 foreach (var ingredient in potion.ingredients.ingredient)
                 {
@@ -60,13 +59,11 @@ namespace Jenna
 
                 if (_currentIngredients.Count != neededIngredients)
                 {
-                    // Debug.Log(potion.name + " needs " + neededIngredients);
                     continue; 
                 }
 
                 bool isMatch = true;
-
-                // Then check the quantity of each ingredient
+                
                 foreach (var ingredient in potion.ingredients.ingredient)
                 {
                     int ingredientCount = _currentIngredients.Count(x => x == ingredient.id);

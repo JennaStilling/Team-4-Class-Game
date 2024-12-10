@@ -58,9 +58,9 @@ namespace Composite
             return _name;
         }
 
-        public List<IQuest> GetSubQuests()
+        public int GetPotionId()
         {
-            return _subQuests;
+            throw new System.NotImplementedException();
         }
 
         public void AddSubquest(IQuest subQuest)
@@ -71,12 +71,16 @@ namespace Composite
         public void RemoveSubquest(IQuest subQuest)
         {
             _subQuests.Remove(subQuest);
+        }
 
+        public List<IQuest> GetSubQuests()
+        {
+            return _subQuests;
         }
 
         public string ToString()
         {
-            return "Quest Name: " + _name + ", Description: " + _description;
+            return "Composite Quest Name: " + _name + ", Description: " + _description;
         }
     }
 }

@@ -7,9 +7,11 @@ namespace Composite
         private string _name { get; set; }
         private string _description { get; set; }
         private bool _isComplete;
-        
-        public Quest(string name, string description)
+        private int _potionId; // Track potion ID
+
+        public Quest(int potionId, string name, string description)
         {
+            _potionId = potionId; // Initialize with potion ID
             _name = name;
             _description = description;
             _isComplete = false;
@@ -18,7 +20,7 @@ namespace Composite
         public void CompleteQuest()
         {
             _isComplete = true;
-            Debug.Log("Player has completed " + _name + " quest");
+            Debug.Log("Potion " + _potionId + " quest completed: " + _name);
         }
 
         public bool IsComplete()
@@ -46,9 +48,14 @@ namespace Composite
             return _name;
         }
 
+        public int GetPotionId()
+        {
+            return _potionId; // Return the potion ID
+        }
+
         public string ToString()
         {
-            return "Quest Name: " + _name + ", Description: " + _description;
+            return "Potion ID: " + _potionId + ", Quest Name: " + _name + ", Description: " + _description;
         }
     }
 }
