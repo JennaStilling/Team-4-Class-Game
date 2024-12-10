@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LVL_StartMenu.unity
+    guid: a91f7a0f4fac10548918ebb0c6155e14
+  - enabled: 1
+    path: Assets/Scenes/LVL_Instructions.unity
+    guid: b78f076b804f7b54ca5e9329530095cb
+  - enabled: 1
+    path: Assets/Scenes/LVL_Brew.unity
+    guid: b39862a96332ac6468f4f0144cca8d88
+  - enabled: 1
+    path: Assets/Scenes/LVL_EndGame.unity
+    guid: 085c0ae004082ce44a141609cd8896e3
   m_configObjects: {}
