@@ -33,6 +33,11 @@ namespace Jenna
         {
             _potionId = id;
         }
+
+        public int GetPotionId()
+        {
+            return _potionId;
+        }
         
         public void AddIngredient(int id)
         {

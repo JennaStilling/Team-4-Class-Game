@@ -3,24 +3,26 @@ using UnityEngine;
 
 namespace Composite
 {
-    public class CompositeQuest : IQuest
+    public class CompositeOrder : IOrder
     {
         private string _name { get; set; }
         private string _description { get; set; }
         private bool _isComplete;
-        private List<IQuest> _subQuests { get; set; }
+        private List<IOrder> _subOrders { get; set; }
+        private int _id;
 
-        public CompositeQuest(string name, string description)
+        public CompositeOrder(string name, string description, int id)
         {
             _name = name;
             _description = description;
             _isComplete = false;
-            _subQuests = new List<IQuest>();
+            _subOrders = new List<IOrder>();
+            _id = id;
         }
 
         public void CompleteQuest()
         {
-            foreach (var subQuest in _subQuests)
+            foreach (var subQuest in _subOrders)
             {
                 if (!subQuest.IsComplete())
                 {
@@ -63,24 +65,34 @@ namespace Composite
             throw new System.NotImplementedException();
         }
 
-        public void AddSubquest(IQuest subQuest)
+        public void AddSubOrder(IOrder subOrders)
         {
-            _subQuests.Add(subQuest);
+            _subOrders.Add(subOrders);
         }
 
-        public void RemoveSubquest(IQuest subQuest)
+        public void RemoveSubOrder(IOrder subOrders)
         {
-            _subQuests.Remove(subQuest);
+            _subOrders.Remove(subOrders);
         }
 
-        public List<IQuest> GetSubQuests()
+        public List<IOrder> GetSubOrders()
         {
-            return _subQuests;
+            return _subOrders;
         }
 
         public string ToString()
         {
-            return "Composite Quest Name: " + _name + ", Description: " + _description;
+            return "Composite Order Name: " + _name + ", Description: " + _description;
+        }
+
+        public void SetOrderId(int id)
+        {
+            _id = id;
+        }
+
+        public int GetOrderId()
+        {
+            return _id;
         }
     }
 }

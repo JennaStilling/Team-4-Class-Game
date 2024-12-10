@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace Composite
 {
-    public class Quest : IQuest
+    public class Order : IOrder
     {
         private string _name { get; set; }
         private string _description { get; set; }
         private bool _isComplete;
         private int _potionId; // Track potion ID
 
-        public Quest(int potionId, string name, string description)
+        public Order(int potionId, string name, string description)
         {
             _potionId = potionId; // Initialize with potion ID
             _name = name;
@@ -55,7 +55,17 @@ namespace Composite
 
         public string ToString()
         {
-            return "Potion ID: " + _potionId + ", Quest Name: " + _name + ", Description: " + _description;
+            return "Potion ID: " + _potionId + " Description: " + _description;
+        }
+
+        public void SetOrderId(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetOrderId()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

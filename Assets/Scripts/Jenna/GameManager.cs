@@ -1,10 +1,9 @@
 using UnityEngine;
 
-namespace Player_Potion_Making
-{
-    public class PotionMakingManager : MonoBehaviour
+namespace Jenna {
+    public class GameManager : MonoBehaviour
     {
-        public static PotionMakingManager Instance;
+        public static GameManager Instance;
         
 
         private void Awake()
