@@ -12,10 +12,11 @@ public class ClickToOrder : MonoBehaviour
         if (!_orderTaken)
         {
             _orderTaken = true;
-            // Debug.Log("Action performed on " + gameObject.name);
-            GameObject orderBoard = GameObject.Find("Order_Board");
 
-            if (orderBoard != null)
+            GameObject orderBoard = GameObject.Find("Order_Board");
+            GameObject ordersParent = GameObject.Find("Canvas/Order_Overlay/Orders");
+
+            if (orderBoard != null && ordersParent != null)
             {
                 Order_JSON_Reader orderReader = orderBoard.GetComponent<Order_JSON_Reader>();
                 int orderIndex = orderReader.GenerateRandomOrder();
@@ -33,22 +34,36 @@ public class ClickToOrder : MonoBehaviour
                 }
 
                 Debug.Log("Order created with " + compositeOrder.GetSubOrders().Count + " sub orders.");
-
-                foreach (var subOrder in compositeOrder.GetSubOrders())
-                {
-                    Debug.Log(subOrder.ToString());
-                }
                 
+                bool orderAssigned = false;
+
+                foreach (Transform child in ordersParent.transform)
+                {
+                    Order_Slot slot = child.GetComponent<Order_Slot>();
+
+                    if (slot != null && !slot.slotFull)
+                    {
+                        slot.AssignOrder(compositeOrder);
+                        orderAssigned = true;
+                        break;
+                    }
+                }
+
+                if (!orderAssigned)
+                {
+                    Debug.LogError("All order slots are full. Cannot assign a new order.");
+                }
+
                 GetComponent<Customer>().SetOrderId(orderIndex);
             }
-
             else
             {
-                Debug.Log("Order_Board object not found.");
+                Debug.LogError("Order_Board or Orders object not found in the hierarchy.");
             }
         }
-        else {
-            Debug.Log("Order taken already from " + gameObject.name);
+        else
+        {
+            Debug.Log("Order already taken from " + gameObject.name);
         }
     }
 }

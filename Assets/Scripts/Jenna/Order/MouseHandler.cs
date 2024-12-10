@@ -1,3 +1,4 @@
+using Jenna;
 using UnityEngine;
 
 public class MouseHandler : MonoBehaviour
@@ -19,6 +20,17 @@ public class MouseHandler : MonoBehaviour
                 {
                     clickable.PerformAction();
                 }
+
+                // UI_ClickHandler ui_clickable = hit.collider.GetComponent<UI_ClickHandler>();
+                // if (ui_clickable != null)
+                // {
+                //     Debug.Log("Not null");
+                //     ui_clickable.PerformAction(hit);
+                // }
+                // else
+                // {
+                //     Debug.Log("ui thing null");
+                // }
             }
         }
     }
