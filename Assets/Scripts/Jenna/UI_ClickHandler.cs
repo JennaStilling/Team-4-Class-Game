@@ -46,9 +46,18 @@ namespace Jenna
         private void PauseGame()
         {
             GameManager.Instance.GamePaused = true;
-            GameObject pauseMenu = GameObject.Find("Canvas/Order_Overlay/Pause_Menu");
-            pauseMenu.SetActive(true);
-            pauseMenu.GetComponent<PauseMenuHandler>().PauseGame();
+            if (GameManager.Instance.RecipeInterfaceOpen)
+            {
+                GameObject pauseMenu = GameObject.Find("Canvas/Recipe_Overlay/Pause_Menu");
+                pauseMenu.SetActive(true);
+                pauseMenu.GetComponent<PauseMenuHandler>().PauseGame();
+            }
+            else
+            {
+                GameObject pauseMenu = GameObject.Find("Canvas/Order_Overlay/Pause_Menu");
+                pauseMenu.SetActive(true);
+                pauseMenu.GetComponent<PauseMenuHandler>().PauseGame();
+            }
         }
 
         private void ToggleRecipe()

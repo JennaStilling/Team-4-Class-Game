@@ -38,7 +38,7 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Swamp Water", "id": 18, "quantity": 1 },
+          { "ingredient_name": "Murky Water", "id": 19, "quantity": 1 },
           { "ingredient_name": "Rose", "id": 2, "quantity": 2 }
         ]
       },
