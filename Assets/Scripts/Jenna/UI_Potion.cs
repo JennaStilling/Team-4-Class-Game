@@ -19,6 +19,7 @@ namespace Jenna
     {
         private List<int> _currentIngredients;
         [SerializeField] private int _potionId;
+        [SerializeField] private Texture _defaultTexture;
         private PotionState _currentState;
         private Dictionary<int, Potion_JSON_Reader.Potion> _allPotionList;
         private Potion_JSON_Reader.Potion _potionReference;
@@ -146,15 +147,16 @@ namespace Jenna
             
             Debug.Log("Potion brewed.");
             _currentState = PotionState.Brewed;
-
+            
             Texture potionTexture = GameObject.Find("Potion_Loader").GetComponent<PotionMaterials>().GetPotionMaterials()[_potionId];
+            
             if (potionTexture is Texture2D texture2D)
             {
                 Rect rect = new Rect(0, 0, texture2D.width, texture2D.height);
                 Sprite potionSprite = Sprite.Create(texture2D, rect, new Vector2(0.5f, 0.5f));
                 GetComponent<Image>().sprite = potionSprite;
             }
-            else // found error message
+            else
             {
                 Debug.LogError("Failed to convert potion material texture to Texture2D.");
             }
@@ -165,20 +167,11 @@ namespace Jenna
             Debug.Log("Potion discarded");
             //Destroy(gameObject);
             GameManager.Instance.PotionsRuined++;
+            _currentState = PotionState.Empty;
+            _currentIngredients = new List<int>();
+
+
         }
 
-        public void Update()
-        {
-            //Debug.Log("Update");
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                GrindIngredients();
-            }
-
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                BrewPotion();
-            }
-        }
     }
 }

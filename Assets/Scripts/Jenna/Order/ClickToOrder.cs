@@ -9,7 +9,7 @@ public class ClickToOrder : MonoBehaviour
 
     public void PerformAction()
     {
-        if (!_orderTaken)
+        if (!_orderTaken && !GameManager.Instance.BrewingInterfaceOpen && !GameManager.Instance.RecipeInterfaceOpen && !GameManager.Instance.GamePaused)
         {
             _orderTaken = true;
 

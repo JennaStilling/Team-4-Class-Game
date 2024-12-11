@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Jenna {
     public class GameManager : MonoBehaviour
     {
+        public bool BrewingInterfaceOpen { get; set; } = false;
+        public bool RecipeInterfaceOpen { get; set; } = false;
+        
+        public bool GamePaused { get; set; } = false;
         public static GameManager Instance;
         
 
@@ -19,8 +24,29 @@ namespace Jenna {
             }
         }
 
-        public int PotionsRuined { get; set; } = 0;
-        public int OrdersRuined { get; set; } = 0;
+        private int _potionsRuined;
+        public int PotionsRuined
+        {
+            get { return _potionsRuined; }
+            set
+            {
+                _potionsRuined = value;
+                if (_potionsRuined >= 5)
+                    HandleGameOver();
+            }
+        }
+        private int _ordersRuined;
+
+        public int OrdersRuined
+        {
+            get { return _ordersRuined; }
+            set
+            {
+                _ordersRuined = value;
+                if (_ordersRuined >= 5)
+                    HandleGameOver();
+            }
+        }
 
         public int PotionsMade { get; set; } = 0;
         public int OrdersComplete { get; set; } = 0;
@@ -29,15 +55,15 @@ namespace Jenna {
 
         void Update()
         {
-            if (PotionsRuined >= 5 || OrdersRuined >= 3)
-            {
-                HandleGameOver();
-            }
+            
         }
 
         private void HandleGameOver()
         {
             Debug.Log("Game over!");
+            _potionsRuined = 0;
+            _ordersRuined = 0;
+            SceneManager.LoadScene("LVL_StartMenu");
         }
     }
 }
