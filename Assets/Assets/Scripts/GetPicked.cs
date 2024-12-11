@@ -30,6 +30,7 @@ public class GetPicked : MonoBehaviour
         {
             collected = true;
             Debug.Log("Player touched the collectible!"); // Display message in the console
+            GameObject.FindObjectOfType<GameManager>()?.SetNearItem(true);
         }
     }
 
@@ -39,7 +40,9 @@ public class GetPicked : MonoBehaviour
         {
             collected = false;
             Debug.Log("Player is no longer touching the collectible."); // Display message in the console
+            GameObject.FindObjectOfType<GameManager>()?.SetNearItem(false);
         }
+        
     }
 
     private void AddToCollectedItems(GameObject item)
