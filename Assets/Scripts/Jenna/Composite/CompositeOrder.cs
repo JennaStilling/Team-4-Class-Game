@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using Jenna;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Composite
 {
     public class CompositeOrder : IOrder
     {
+        [SerializeField] private UnityEvent onTransmitSuccess = new UnityEvent();
         private string _name { get; set; }
         private string _description { get; set; }
         private bool _isComplete;
@@ -32,9 +34,23 @@ namespace Composite
                 }
             }
 
+            GameManager.Instance.OrdersComplete++;
             _isComplete = true;
             Debug.Log("Large quest complete");
+            TransmitSuccess();
         }
+
+        public void TransmitSuccess()
+        {
+            Debug.Log("Transmitting success...");
+            onTransmitSuccess.Invoke();
+        }
+        
+        public void RegisterSuccessListener(UnityAction listener)
+        {
+            onTransmitSuccess.AddListener(listener);
+        }
+    
 
         public bool IsComplete()
         {
@@ -128,6 +144,7 @@ namespace Composite
             {
                 Debug.Log("Potion not needed - failed order");
                 GameManager.Instance.OrdersRuined++;
+                onTransmitSuccess.Invoke();
             }
         }
     }

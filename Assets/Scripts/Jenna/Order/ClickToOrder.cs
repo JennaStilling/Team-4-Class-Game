@@ -14,7 +14,7 @@ public class ClickToOrder : MonoBehaviour
             _orderTaken = true;
 
             GameObject orderBoard = GameObject.Find("Order_Board");
-            GameObject ordersParent = GameObject.Find("Canvas/Order_Overlay/Orders");
+            GameObject ordersParent = GameObject.Find("Canvas/Order_Overlay/Orders/Sidebar");
 
             if (orderBoard != null && ordersParent != null)
             {
@@ -44,6 +44,7 @@ public class ClickToOrder : MonoBehaviour
                     if (slot != null && !slot.slotFull)
                     {
                         slot.AssignOrder(compositeOrder);
+                        slot.RegisterSuccessListener(ResetOrderStatus);
                         orderAssigned = true;
                         break;
                     }
@@ -65,5 +66,11 @@ public class ClickToOrder : MonoBehaviour
         {
             Debug.Log("Order already taken from " + gameObject.name);
         }
+    }
+
+    public void ResetOrderStatus()
+    {
+        Debug.Log("Customer can now give another order!");
+        _orderTaken = false;
     }
 }

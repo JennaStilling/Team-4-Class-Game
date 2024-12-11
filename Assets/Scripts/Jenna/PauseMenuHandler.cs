@@ -10,6 +10,8 @@ namespace Jenna
         {
             Debug.Log("Paused");
             Time.timeScale = 0f;
+            GameObject.Find("Canvas/Order_Overlay/Buttons").SetActive(false);
+            GameObject.Find("Canvas/Order_Overlay/Orders").SetActive(false);
             _isPaused = true;
         }
         
@@ -25,6 +27,8 @@ namespace Jenna
             Time.timeScale = 1f;
             GameObject pauseMenu = GameObject.Find("Canvas/Order_Overlay/Pause_Menu");
             pauseMenu.SetActive(false);
+            GameObject.Find("Canvas/Order_Overlay/Buttons").SetActive(true);
+            GameObject.Find("Canvas/Order_Overlay/Orders").SetActive(true);
             _isPaused = false;
             GameManager.Instance.GamePaused = _isPaused;
         }
