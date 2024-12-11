@@ -33,6 +33,7 @@ namespace Composite
                 }
             }
 
+            SoundManager.Instance.PlayEffect(AudioTag.Complete);
             GameManager.Instance.OrdersComplete++;
             _isComplete = true;
             TransmitSuccess();
@@ -140,6 +141,7 @@ namespace Composite
             if (!addedPotion)
             {
                 Debug.Log("Potion not needed - failed order");
+                SoundManager.Instance.PlayEffect(AudioTag.Error);
                 GameManager.Instance.OrdersRuined++;
                 onTransmitSuccess.Invoke();
             }

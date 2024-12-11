@@ -7,7 +7,7 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Juniper Berry", "id": 5, "quantity": 1 },
+          { "ingredient_name": "Holly Berry", "id": 15, "quantity": 1 },
           { "ingredient_name": "Wheat", "id": 3, "quantity": 1 },
           { "ingredient_name": "Water", "id": 18, "quantity": 1 }
         ]
@@ -24,7 +24,7 @@
       "ingredients": {
         "ingredient": [
           { "ingredient_name": "Sunflower", "id": 1, "quantity": 1 },
-          { "ingredient_name": "Holly Berry", "id": 15, "quantity": 2 }
+          { "ingredient_name": "Juniper Berry", "id": 5, "quantity": 2 }
         ]
       },
       "cost": 3,
@@ -38,7 +38,7 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Murky Water", "id": 19, "quantity": 1 },
+          { "ingredient_name": "Swamp Water", "id": 18, "quantity": 1 },
           { "ingredient_name": "Rose", "id": 2, "quantity": 2 }
         ]
       },
@@ -156,7 +156,7 @@
     {
       "id": 11,
       "name": "Invulnerability",
-      "description": "Shrug off incoming physical damage at will. But remember, words can still hurt",
+      "description": "Shrug off incoming physical damage at will. Become invincible. Then you can star in a show",
       "tier": 1,
       "ingredients": {
         "ingredient": [

@@ -2328,7 +2328,7 @@ PrefabInstance:
     - target: {fileID: 5073141562310532907, guid: a38db4c5ca9f3e649807b1a83f338ca7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 808a0695f26e4f14f8f9b3e841be3010, type: 3}
     - target: {fileID: 5753410397072737642, guid: a38db4c5ca9f3e649807b1a83f338ca7, type: 3}
       propertyPath: _id
       value: 10
@@ -4221,7 +4221,7 @@ PrefabInstance:
     - target: {fileID: 5073141562310532907, guid: 13cfa0eb280093045a6d29c70862c037, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f4c25ad483c6c954b8a6c8010d49c499, type: 3}
+      objectReference: {fileID: 21300000, guid: 77606352282d3cc4dab8ba9d48c69323, type: 3}
     - target: {fileID: 6347099075394462492, guid: 13cfa0eb280093045a6d29c70862c037, type: 3}
       propertyPath: _id
       value: 2
@@ -9594,9 +9594,9 @@ MonoBehaviour:
   - id: 1
     texture: {fileID: 2800000, guid: ed8815c0d23ce4f45b62a9621110e195, type: 3}
   - id: 2
-    texture: {fileID: 2800000, guid: f4c25ad483c6c954b8a6c8010d49c499, type: 3}
-  - id: 3
     texture: {fileID: 2800000, guid: 77606352282d3cc4dab8ba9d48c69323, type: 3}
+  - id: 3
+    texture: {fileID: 2800000, guid: f4c25ad483c6c954b8a6c8010d49c499, type: 3}
   - id: 4
     texture: {fileID: 2800000, guid: 048ef2f2a9e31f1439e730518e624a6b, type: 3}
   - id: 5
@@ -9645,7 +9645,7 @@ MonoBehaviour:
   - id: 9
     texture: {fileID: 2800000, guid: 82b598503bc0cdb4a8b04896de20865d, type: 3}
   - id: 10
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 808a0695f26e4f14f8f9b3e841be3010, type: 3}
   - id: 11
     texture: {fileID: 2800000, guid: 0ab0d82638ccb1b448f66e9b361fb181, type: 3}
   - id: 12
@@ -13937,7 +13937,7 @@ PrefabInstance:
     - target: {fileID: 5073141562310532907, guid: 13cfa0eb280093045a6d29c70862c037, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 77606352282d3cc4dab8ba9d48c69323, type: 3}
+      objectReference: {fileID: 21300000, guid: f4c25ad483c6c954b8a6c8010d49c499, type: 3}
     - target: {fileID: 6347099075394462492, guid: 13cfa0eb280093045a6d29c70862c037, type: 3}
       propertyPath: _id
       value: 3

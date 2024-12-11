@@ -13,6 +13,7 @@ namespace Jenna
         {
             if (eventData.pointerDrag != null && !eventData.pointerDrag.name.Equals("UI_PotionBrewing"))
             {
+                SoundManager.Instance.PlayEffect(AudioTag.Drag);
                 UI_Potion potionReference = GetComponent<UI_Potion>();
                 potionReference.AddIngredient(eventData.pointerDrag.GetComponent<Ingredient>().GetId());
                 
@@ -52,6 +53,7 @@ namespace Jenna
         {
             CompositeOrder assignedOrder = GetComponent<Order_Slot>().GetCurrentOrder();
             assignedOrder.AddPotionToOrder(draggingObject.GetComponent<UI_Potion>().GetPotionId());
+            SoundManager.Instance.PlayEffect(AudioTag.Drag);
             eventData.pointerDrag.GetComponent<UI_Potion>().ResetPotion();
         }
     }

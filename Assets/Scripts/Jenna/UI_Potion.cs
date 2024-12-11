@@ -121,7 +121,7 @@ namespace Jenna
         private IEnumerator GrindTimeCoroutine(float grindTime)
         {
             yield return new WaitForSeconds(grindTime);
-            
+            SoundManager.Instance.PlayEffect(AudioTag.Grind);
             _currentState = PotionState.Ground;
             Debug.Log("Added potion id: " + _potionId);
         }
@@ -147,6 +147,7 @@ namespace Jenna
         private IEnumerator BrewTimeCoroutine(float cookTime)
         {
             yield return new WaitForSeconds(cookTime);
+            SoundManager.Instance.PlayEffect(AudioTag.Brew);
             _currentState = PotionState.Brewed;
             
             Texture potionTexture = GameObject.Find("Potion_Loader").GetComponent<PotionMaterials>().GetPotionMaterials()[_potionId];
@@ -174,6 +175,7 @@ namespace Jenna
 
         public void HandleFailure()
         {
+            SoundManager.Instance.PlayEffect(AudioTag.Error);
             Debug.Log("Potion discarded");
             GameManager.Instance.PotionsRuined++;
             ResetPotion();

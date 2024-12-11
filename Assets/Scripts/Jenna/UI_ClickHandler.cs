@@ -69,7 +69,8 @@ namespace Jenna
             
             GameObject.Find("Managers/Camera_Manager").GetComponent<CameraManager>().SwitchCameras();
             GameObject brewer = GameObject.Find("Canvas/Order_Overlay/Brewing_Interface");
-            brewer.SetActive(_brewerToggled);
+            if (brewer != null)
+                brewer.SetActive(_brewerToggled);
         }
 
         public void ToggleBrewer()
@@ -81,7 +82,8 @@ namespace Jenna
             
             GameObject.Find("Managers/Camera_Manager").GetComponent<CameraManager>().MainCamera();
             GameObject brewer = GameObject.Find("Canvas/Order_Overlay/Brewing_Interface");
-            brewer.SetActive(_brewerToggled);
+            if (brewer != null)
+                brewer.SetActive(_brewerToggled);
         }
 
         public void GrindIngredients()

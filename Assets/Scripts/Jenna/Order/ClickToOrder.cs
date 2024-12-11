@@ -11,6 +11,7 @@ public class ClickToOrder : MonoBehaviour
     {
         if (!_orderTaken && !GameManager.Instance.BrewingInterfaceOpen && !GameManager.Instance.RecipeInterfaceOpen && !GameManager.Instance.GamePaused)
         {
+            SoundManager.Instance.PlayEffect(AudioTag.Click);
             _orderTaken = true;
 
             GameObject orderBoard = GameObject.Find("Order_Board");

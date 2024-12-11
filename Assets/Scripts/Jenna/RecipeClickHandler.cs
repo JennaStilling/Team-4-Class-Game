@@ -20,6 +20,7 @@ namespace Jenna
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            SoundManager.Instance.PlayEffect(AudioTag.Recipe);
             switch (gameObject.name)
             {
                 case "Health":
