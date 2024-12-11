@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Jenna;
 using UnityEngine;
 
 namespace Composite
@@ -107,19 +108,26 @@ namespace Composite
 
         public void AddPotionToOrder(int potionId)
         {
+            bool addedPotion = false;
             foreach (var order in _subOrders)
             {
                 if (potionId == order.GetPotionId())
                 {
                     order.SetQuantity(order.GetQuantity() - 1);
                     Debug.Log("Added potion to order.");
-
+                    addedPotion = true;
                     if (order.GetQuantity() <= 0)
                     {
                         order.CompleteQuest();
                         CompleteQuest();
                     }
                 }
+            }
+
+            if (!addedPotion)
+            {
+                Debug.Log("Potion not needed - failed order");
+                GameManager.Instance.OrdersRuined++;
             }
         }
     }
