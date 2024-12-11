@@ -56,7 +56,7 @@ namespace Jenna
                     potion_two.sprite = potionSprite;
                     
                     Color currentColorTwo = potion_two.color;
-                    currentColorTwo.a = 0f;
+                    currentColorTwo.a = 1f;
                     potion_two.color = currentColorTwo;
                 }
             }
