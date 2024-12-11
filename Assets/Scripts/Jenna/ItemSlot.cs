@@ -33,7 +33,7 @@ namespace Jenna
                 if (dragDropUI != null)
                 {
                     draggingObject = dragDropUI.GetDraggingObject();
-                    HandleOrderPotion();
+                    HandleOrderPotion( eventData);
                     draggingObject = dragDropUI.GetDraggingObject();
                     if (draggingObject != null)
                     {
@@ -48,10 +48,11 @@ namespace Jenna
             }
         }
 
-        public void HandleOrderPotion()
+        public void HandleOrderPotion(PointerEventData eventData)
         {
             CompositeOrder assignedOrder = GetComponent<Order_Slot>().GetCurrentOrder();
             assignedOrder.AddPotionToOrder(draggingObject.GetComponent<UI_Potion>().GetPotionId());
+            eventData.pointerDrag.GetComponent<UI_Potion>().ResetPotion();
         }
     }
 }

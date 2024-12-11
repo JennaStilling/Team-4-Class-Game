@@ -178,6 +178,5 @@ namespace Jenna
             GameManager.Instance.PotionsRuined++;
             ResetPotion();
         }
-
     }
 }
