@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Jenna
 {
-    public class DragDropUI : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class DragDropUI : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         [SerializeField] private Canvas _canvas;
         private RectTransform _rectTransform;
@@ -26,16 +26,11 @@ namespace Jenna
         {
             return _draggingObject;
         }
-        
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            // Debug.Log("OnPointerDown");
-        }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             _draggingObject = Instantiate(gameObject, _canvas.transform);
-//            Debug.Log(_draggingObject.name);
+
             if (_draggingObject.name.Equals("UI_PotionBrewing(Clone)"))
             {
                 foreach (Transform child in _draggingObject.transform)
@@ -60,7 +55,6 @@ namespace Jenna
         {
             if (_draggingObject != null)
             {
-                //Debug.Log("OnEndDrag");
                 Destroy(_draggingObject);
             }
 

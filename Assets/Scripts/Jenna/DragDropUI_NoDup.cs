@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace Jenna
 {
-    public class DragDropUI_NoDup : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class DragDropUI_NoDup : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         [SerializeField] private Canvas _canvas;
         private RectTransform _rectTransform;
@@ -14,11 +14,7 @@ namespace Jenna
             _rectTransform = GetComponent<RectTransform>();
             _canvasGroup = GetComponent<CanvasGroup>();
         }
-
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            // Debug.Log("OnPointerDown");
-        }
+        
 
         public void OnBeginDrag(PointerEventData eventData)
         {

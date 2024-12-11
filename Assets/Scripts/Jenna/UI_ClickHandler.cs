@@ -23,23 +23,18 @@ namespace Jenna
             switch (gameObject.name)
             {
                 case "Pause":
-                    Debug.Log("Pause game");
                     PauseGame();
                     break;
                 case "Toggle_Brewer":
-                    Debug.Log("Toggle Brewer");
                     ToggleBrewer();
                     break;
                 case "Toggle_Recipe":
-                    Debug.Log("Toggle Recipe");
                     ToggleRecipe();
                     break;
                 case "Grind":
-                    Debug.Log("Grind");
                     GrindIngredients();
                     break;
                 case "Brew":
-                    Debug.Log("Brew");
                     BrewPotion();
                     break;
                 default:
@@ -54,7 +49,6 @@ namespace Jenna
             GameObject pauseMenu = GameObject.Find("Canvas/Order_Overlay/Pause_Menu");
             pauseMenu.SetActive(true);
             pauseMenu.GetComponent<PauseMenuHandler>().PauseGame();
-            Debug.Log("Paused");
         }
 
         private void ToggleRecipe()

@@ -10,11 +10,6 @@ namespace Jenna
             Debug.Log("Not implemented");
         }
         
-        public void StartStoryMode()
-        {
-            Debug.Log("Not implemented");
-        }
-        
         public void StartGame()
         {
             //Time.timeScale = 1f;

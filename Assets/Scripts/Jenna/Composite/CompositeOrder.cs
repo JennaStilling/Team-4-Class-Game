@@ -29,20 +29,17 @@ namespace Composite
             {
                 if (!subQuest.IsComplete())
                 {
-                    Debug.Log(_name + " is not completed as subquests have not been completed");
                     return;
                 }
             }
 
             GameManager.Instance.OrdersComplete++;
             _isComplete = true;
-            Debug.Log("Large quest complete");
             TransmitSuccess();
         }
 
         public void TransmitSuccess()
         {
-            Debug.Log("Transmitting success...");
             onTransmitSuccess.Invoke();
         }
         

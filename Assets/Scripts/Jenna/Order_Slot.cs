@@ -17,13 +17,11 @@ namespace Jenna
             _currentOrder.RegisterSuccessListener(FreeSlot); // Subscribe to the event
             GetComponent<OrderSlotHandler>().SetCurrentOrder(_currentOrder);
             slotFull = true;
-            Debug.Log("Order assigned: " + order.ToString());
             int i = 0;
             
             foreach (var subOrder in order.GetSubOrders())
             {
                  Debug.Log(subOrder.ToString());
-                 Debug.Log(i);
                  if (i == 0)
                  {
                      GetComponent<OrderSlotHandler>().UpdateCardImages(subOrder.GetPotionId(), 1);
@@ -41,16 +39,16 @@ namespace Jenna
 
         private void FreeSlot()
         {
-            Debug.Log("Slot is now free!");
             GetComponent<Image>().color = Color.white;
             slotFull = false;
             GetComponent<OrderSlotHandler>().ResetCard();
+            Debug.Log("Order complete");
+            _currentOrder = null;
             TransmitSuccess();
         }
         
         public void TransmitSuccess()
         {
-            Debug.Log("Transmitting message that new order can be generated...");
             onTransmitSuccess.Invoke();
         }
         
@@ -59,21 +57,9 @@ namespace Jenna
             onTransmitSuccess.AddListener(listener);
         }
 
-        public void UpdateOrder(UI_Potion potion)
-        {
-            
-        }
-
         public CompositeOrder GetCurrentOrder()
         {
             return _currentOrder;
-        }
-
-        public void FinishOrder()
-        {
-            slotFull = false;
-            Debug.Log("Order complete");
-            _currentOrder = null;
         }
     }
 }

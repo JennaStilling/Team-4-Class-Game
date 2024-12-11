@@ -106,6 +106,7 @@ namespace Jenna
                         _potionId = potion.id;
 
                         Debug.Log("Grinding ingredients for " + _potionReference.grind_time + " seconds");
+                        GetComponent<CountdownTimer>().StartTimer(_potionReference.grind_time);
                         StartCoroutine(GrindTimeCoroutine(potion.grind_time));
                     }
 
@@ -123,7 +124,6 @@ namespace Jenna
             yield return new WaitForSeconds(grindTime);
             
             _currentState = PotionState.Ground;
-            Debug.Log("Grinding complete.");
             Debug.Log("Added potion id: " + _potionId);
         }
 
@@ -141,6 +141,7 @@ namespace Jenna
             else
             {
                 Debug.Log("Brewing potion for " + _potionReference.cook_time + " seconds");
+                GetComponent<CountdownTimer>().StartTimer(_potionReference.cook_time);
                 StartCoroutine(BrewTimeCoroutine(_potionReference.cook_time));
             }
         }
@@ -148,9 +149,7 @@ namespace Jenna
         // Coroutine for brew time
         private IEnumerator BrewTimeCoroutine(float cookTime)
         {
-            yield return new WaitForSeconds(cookTime); 
-            
-            Debug.Log("Potion brewed.");
+            yield return new WaitForSeconds(cookTime);
             _currentState = PotionState.Brewed;
             
             Texture potionTexture = GameObject.Find("Potion_Loader").GetComponent<PotionMaterials>().GetPotionMaterials()[_potionId];

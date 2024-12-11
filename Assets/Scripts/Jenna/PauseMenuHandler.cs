@@ -8,11 +8,11 @@ namespace Jenna
         private bool _isPaused = false;
         public void PauseGame()
         {
-            Debug.Log("Paused");
             Time.timeScale = 0f;
             GameObject.Find("Canvas/Order_Overlay/Buttons").SetActive(false);
             GameObject.Find("Canvas/Order_Overlay/Orders").SetActive(false);
             _isPaused = true;
+            GameManager.Instance.GamePaused = _isPaused;
         }
         
         public void QuitToMenu()

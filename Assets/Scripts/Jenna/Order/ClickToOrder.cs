@@ -24,7 +24,7 @@ public class ClickToOrder : MonoBehaviour
 
                 CompositeOrder compositeOrder =
                     new CompositeOrder("Potion Order", "not really needed, something funny, etc.", orderIndex);
-                Debug.Log("Number of potions in this order: " + order.potions.Count);
+                // Debug.Log("Number of potions in this order: " + order.potions.Count);
 
                 foreach (var orderPotion in order.potions)
                 {
@@ -64,13 +64,13 @@ public class ClickToOrder : MonoBehaviour
         }
         else
         {
-            Debug.Log("Order already taken from " + gameObject.name);
+            //Debug.Log("Order already taken from " + gameObject.name + " or order taking is paused");
         }
     }
 
     public void ResetOrderStatus()
     {
-        Debug.Log("Customer can now give another order!");
+        // Debug.Log("Customer can now give another order!");
         _orderTaken = false;
     }
 }

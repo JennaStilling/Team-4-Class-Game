@@ -11,8 +11,6 @@ namespace Jenna
         private GameObject draggingObject = null;
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log(eventData.pointerDrag.name);
-
             if (eventData.pointerDrag != null && !eventData.pointerDrag.name.Equals("UI_PotionBrewing"))
             {
                 UI_Potion potionReference = GetComponent<UI_Potion>();

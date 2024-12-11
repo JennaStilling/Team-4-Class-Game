@@ -68,12 +68,12 @@ namespace Player_Potion_Making
                 foreach (var orderPotion in potions)
                 {
                     profit += (Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].cost * orderPotion.quantity);
-                    Debug.Log("Added potion - " + Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].name +
-                              " with a cost of " + (Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].cost *
-                                                    orderPotion.quantity));
+                    // Debug.Log("Added potion - " + Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].name +
+                    //           " with a cost of " + (Potion_JSON_Reader.Instance.GetPotionData()[orderPotion.id].cost *
+                    //                                 orderPotion.quantity));
                 }
 
-                Debug.Log("Total profit: " + profit);
+                // Debug.Log("Total profit: " + profit);
             }
 
             public int GetProfit()
@@ -135,16 +135,6 @@ namespace Player_Potion_Making
         public Dictionary<int, Order> GetPotionData()
         {
             return _orderData;
-        }
-        
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                int i = Random.Range(0, 50);
-                Debug.Log("Order id: " + _orderData[i].id);
-                _orderData[i].CalculateProfit();
-            }
         }
 
         public int GenerateRandomOrder()
