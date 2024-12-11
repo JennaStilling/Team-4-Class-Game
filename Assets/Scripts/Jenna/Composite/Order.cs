@@ -7,11 +7,13 @@ namespace Composite
         private string _name { get; set; }
         private string _description { get; set; }
         private bool _isComplete;
-        private int _potionId; 
+        private int _potionId;
+        private int _quantity;
 
-        public Order(int potionId, string name, string description)
+        public Order(int potionId, int quantity, string name, string description)
         {
             _potionId = potionId;
+            _quantity = quantity;
             _name = name;
             _description = description;
             _isComplete = false;
@@ -66,6 +68,16 @@ namespace Composite
         public int GetOrderId()
         {
             throw new System.NotImplementedException();
+        }
+
+        public void SetQuantity(int quantity)
+        {
+            _quantity = quantity;
+        }
+
+        public int GetQuantity()
+        {
+            return _quantity;
         }
     }
 }

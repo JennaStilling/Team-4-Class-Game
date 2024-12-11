@@ -28,7 +28,7 @@ public class ClickToOrder : MonoBehaviour
 
                 foreach (var orderPotion in order.potions)
                 {
-                    Order potionOrder = new Order(orderPotion.id, "Potion ID " + orderPotion.id,
+                    Order potionOrder = new Order(orderPotion.id, orderPotion.quantity, "Potion ID " + orderPotion.id,
                         "Create " + orderPotion.quantity + " potions of ID " + orderPotion.id);
                     compositeOrder.AddSubOrder(potionOrder);
                 }

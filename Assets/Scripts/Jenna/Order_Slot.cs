@@ -14,7 +14,16 @@ namespace Jenna
             _currentOrder = order;
             slotFull = true;
             Debug.Log("Order assigned: " + order.ToString());
+            foreach (var subOrder in order.GetSubOrders())
+            {
+             Debug.Log(subOrder.ToString());   
+            }
             GetComponent<Image>().color = Color.green;
+        }
+
+        public void UpdateOrder(UI_Potion potion)
+        {
+            
         }
 
         public CompositeOrder GetCurrentOrder()

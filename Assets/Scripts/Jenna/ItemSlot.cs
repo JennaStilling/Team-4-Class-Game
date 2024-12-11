@@ -1,3 +1,4 @@
+using Composite;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Player_Potion_Making;
@@ -6,26 +7,53 @@ namespace Jenna
 {
     public class ItemSlot : MonoBehaviour, IDropHandler
     {
+        private DragDropUI dragDropUI = null;
+        private GameObject draggingObject = null;
         public void OnDrop(PointerEventData eventData)
         {
-            //Debug.Log("OnDrop");
+            Debug.Log(eventData.pointerDrag.name);
 
-            if (eventData.pointerDrag != null)
+            if (eventData.pointerDrag != null && !eventData.pointerDrag.name.Equals("UI_PotionBrewing"))
             {
                 UI_Potion potionReference = GetComponent<UI_Potion>();
                 potionReference.AddIngredient(eventData.pointerDrag.GetComponent<Ingredient>().GetId());
                 
-                // Get the dragging object reference from the DragDropUI component
-                DragDropUI dragDropUI = eventData.pointerDrag.GetComponent<DragDropUI>();
+                dragDropUI = eventData.pointerDrag.GetComponent<DragDropUI>();
                 if (dragDropUI != null)
                 {
-                    GameObject draggingObject = dragDropUI.GetDraggingObject();
+                    draggingObject = dragDropUI.GetDraggingObject();
                     if (draggingObject != null)
                     {
-                        Destroy(draggingObject); // Destroy the copy instead of the original
+                        Destroy(draggingObject);
+
                     }
                 }
             }
+            else if (eventData.pointerDrag != null && eventData.pointerDrag.name.Equals("UI_PotionBrewing"))
+            {
+                dragDropUI = eventData.pointerDrag.GetComponent<DragDropUI>();
+                if (dragDropUI != null)
+                {
+                    draggingObject = dragDropUI.GetDraggingObject();
+                    HandleOrderPotion();
+                    draggingObject = dragDropUI.GetDraggingObject();
+                    if (draggingObject != null)
+                    {
+                        Destroy(draggingObject);
+
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("Unimplemented");
+            }
+        }
+
+        public void HandleOrderPotion()
+        {
+            CompositeOrder assignedOrder = GetComponent<Order_Slot>().GetCurrentOrder();
+            assignedOrder.AddPotionToOrder(draggingObject.GetComponent<UI_Potion>().GetPotionId());
         }
     }
 }

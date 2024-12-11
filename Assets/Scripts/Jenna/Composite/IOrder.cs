@@ -12,5 +12,7 @@ namespace Composite
         string ToString();
         void SetOrderId(int id);
         int GetOrderId();
+        void SetQuantity(int quantity);
+        int GetQuantity();
     }
 }

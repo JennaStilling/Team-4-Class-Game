@@ -30,6 +30,11 @@ namespace Jenna
             _currentState = PotionState.Empty;
         }
 
+        public Texture GetDefaultTexture()
+        {
+            return _defaultTexture;
+        }
+
         public void SetPotionId(int id)
         {
             _potionId = id;
@@ -155,6 +160,9 @@ namespace Jenna
                 Rect rect = new Rect(0, 0, texture2D.width, texture2D.height);
                 Sprite potionSprite = Sprite.Create(texture2D, rect, new Vector2(0.5f, 0.5f));
                 GetComponent<Image>().sprite = potionSprite;
+
+                gameObject.AddComponent<DragDropUI>();
+                GetComponent<DragDropUI>().SetCanvas(GameObject.Find("Canvas").GetComponent<Canvas>());
             }
             else
             {
@@ -162,15 +170,18 @@ namespace Jenna
             }
         }
 
+        public void ResetPotion()
+        {
+            _currentState = PotionState.Empty;
+            _currentIngredients = new List<int>();
+        }
+
         public void HandleFailure()
         {
             Debug.Log("Potion discarded");
             //Destroy(gameObject);
             GameManager.Instance.PotionsRuined++;
-            _currentState = PotionState.Empty;
-            _currentIngredients = new List<int>();
-
-
+            ResetPotion();
         }
 
     }

@@ -149,7 +149,7 @@ namespace Player_Potion_Making
 
         public int GenerateRandomOrder()
         {
-            int i = Random.Range(1, 51);
+            int i = Random.Range(1, _orderData.Count+1);
             Debug.Log("Order id: " + _orderData[i].id);
             _orderData[i].CalculateProfit();
             return i;

@@ -94,5 +94,33 @@ namespace Composite
         {
             return _id;
         }
+
+        public void SetQuantity(int quantity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetQuantity()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void AddPotionToOrder(int potionId)
+        {
+            foreach (var order in _subOrders)
+            {
+                if (potionId == order.GetPotionId())
+                {
+                    order.SetQuantity(order.GetQuantity() - 1);
+                    Debug.Log("Added potion to order.");
+
+                    if (order.GetQuantity() <= 0)
+                    {
+                        order.CompleteQuest();
+                        CompleteQuest();
+                    }
+                }
+            }
+        }
     }
 }
