@@ -104,8 +104,7 @@ namespace Jenna
                     else
                     {
                         _potionId = potion.id;
-
-                        Debug.Log("Grinding ingredients for " + _potionReference.grind_time + " seconds");
+                        
                         GetComponent<CountdownTimer>().StartTimer(_potionReference.grind_time);
                         StartCoroutine(GrindTimeCoroutine(potion.grind_time));
                     }
@@ -140,13 +139,11 @@ namespace Jenna
             }
             else
             {
-                Debug.Log("Brewing potion for " + _potionReference.cook_time + " seconds");
                 GetComponent<CountdownTimer>().StartTimer(_potionReference.cook_time);
                 StartCoroutine(BrewTimeCoroutine(_potionReference.cook_time));
             }
         }
-
-        // Coroutine for brew time
+        
         private IEnumerator BrewTimeCoroutine(float cookTime)
         {
             yield return new WaitForSeconds(cookTime);
@@ -178,7 +175,6 @@ namespace Jenna
         public void HandleFailure()
         {
             Debug.Log("Potion discarded");
-            //Destroy(gameObject);
             GameManager.Instance.PotionsRuined++;
             ResetPotion();
         }

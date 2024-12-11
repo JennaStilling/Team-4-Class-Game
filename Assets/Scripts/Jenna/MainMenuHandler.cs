@@ -12,9 +12,7 @@ namespace Jenna
         
         public void StartGame()
         {
-            //Time.timeScale = 1f;
             SceneManager.LoadScene("LVL_Brew");
-            //isPaused = false;
         }
 
         public void QuitGame()
