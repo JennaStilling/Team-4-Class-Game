@@ -19,6 +19,7 @@ public class GetPicked : MonoBehaviour
         {
             Debug.Log("Collectible collected!"); // Display message in the console
             AddToCollectedItems(gameObject); // Add the collected item to the list
+            GameObject.FindObjectOfType<GameManager>()?.SetNearItem(false);
             Destroy(gameObject); // Destroy the collectible object
             DisplayCollectedCount(); // Display the amount of collected items
         }
