@@ -2049,7 +2049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 204, y: 60}
+  m_AnchoredPosition: {x: 310, y: 52}
   m_SizeDelta: {x: -910, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80618801
@@ -18982,7 +18982,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -747.7, y: -327.5}
+  m_AnchoredPosition: {x: -752.39996, y: -332}
   m_SizeDelta: {x: 623.2552, y: 397.9051}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688404241
@@ -36383,7 +36383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.7, y: 0}
+  m_AnchoredPosition: {x: -14.7, y: 3}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236058992
@@ -37346,7 +37346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.3, y: 0}
+  m_AnchoredPosition: {x: -40.3, y: 2}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259897402
@@ -37532,13 +37532,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260574551}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03311676, y: 0.7056943, z: -0.033057593, w: 0.7069696}
-  m_LocalPosition: {x: 7.608886, y: 2.5144448, z: -0.80571854}
+  m_LocalRotation: {x: 0.2184836, y: 0.67183816, z: -0.21876362, w: 0.6730831}
+  m_LocalPosition: {x: 7.608886, y: 12.58, z: -0.80571854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 18.433, y: 85.036705, z: 0.001}
+  m_LocalEulerAnglesHint: {x: 36.02, y: 89.873, z: -0.065}
 --- !u!114 &1260574557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37552,7 +37552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1287076785}
-  offset: {x: 0, y: 5, z: -10}
+  offset: {x: 0, y: 10, z: -10}
   smoothSpeed: 0.125
 --- !u!114 &1260574558
 MonoBehaviour:
@@ -37922,7 +37922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.7, y: 0}
+  m_AnchoredPosition: {x: 10.7, y: 3}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276925658
