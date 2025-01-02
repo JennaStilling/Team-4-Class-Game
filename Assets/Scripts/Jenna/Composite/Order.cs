@@ -22,7 +22,6 @@ namespace Composite
         public void CompleteQuest()
         {
             _isComplete = true;
-            Debug.Log("Potion " + _potionId + " quest completed: " + _name);
         }
 
         public bool IsComplete()

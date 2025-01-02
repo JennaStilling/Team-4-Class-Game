@@ -25,7 +25,6 @@ public class ClickToOrder : MonoBehaviour
 
                 CompositeOrder compositeOrder =
                     new CompositeOrder("Potion Order", "not really needed, something funny, etc.", orderIndex);
-                // Debug.Log("Number of potions in this order: " + order.potions.Count);
 
                 foreach (var orderPotion in order.potions)
                 {
@@ -33,8 +32,7 @@ public class ClickToOrder : MonoBehaviour
                         "Create " + orderPotion.quantity + " potions of ID " + orderPotion.id);
                     compositeOrder.AddSubOrder(potionOrder);
                 }
-
-                Debug.Log("Order created with " + compositeOrder.GetSubOrders().Count + " sub orders.");
+                
                 
                 bool orderAssigned = false;
 

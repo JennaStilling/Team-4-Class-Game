@@ -38,7 +38,7 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Swamp Water", "id": 18, "quantity": 1 },
+          { "ingredient_name": "Swamp Water", "id": 19, "quantity": 1 },
           { "ingredient_name": "Rose", "id": 2, "quantity": 2 }
         ]
       },
@@ -83,7 +83,7 @@
       "tier": 1,
       "ingredients": {
         "ingredient": [
-          { "ingredient_name": "Carrot", "id": 7, "quantity": 2 },
+          { "ingredient_name": "Mushroom", "id": 7, "quantity": 2 },
           { "ingredient_name": "Water Lily", "id": 8, "quantity": 2 }
         ]
       },

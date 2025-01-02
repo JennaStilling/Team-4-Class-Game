@@ -171,6 +171,17 @@ namespace Jenna
         {
             _currentState = PotionState.Empty;
             _currentIngredients = new List<int>();
+            
+            if (_defaultTexture is Texture2D texture2D)
+            {
+                Rect rect = new Rect(0, 0, texture2D.width, texture2D.height);
+                Sprite potionSprite = Sprite.Create(texture2D, rect, new Vector2(0.5f, 0.5f));
+                GetComponent<Image>().sprite = potionSprite;
+            }
+            else
+            {
+                Debug.LogError("Failed to convert potion material texture to Texture2D.");
+            }
         }
 
         public void HandleFailure()

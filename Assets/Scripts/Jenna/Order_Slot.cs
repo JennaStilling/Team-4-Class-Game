@@ -21,7 +21,6 @@ namespace Jenna
             
             foreach (var subOrder in order.GetSubOrders())
             {
-                 Debug.Log(subOrder.ToString());
                  if (i == 0)
                  {
                      GetComponent<OrderSlotHandler>().UpdateCardImages(subOrder.GetPotionId(), 1);

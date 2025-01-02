@@ -42,12 +42,11 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEffect(AudioTag desc)
     {
-        Debug.Log("Playing sound");
         AudioClip clip = GetClipFromTag(desc);
         if (clip != null)
         {
-            Debug.Log(clip.name + " was not null");
             AudioSource newSource = CreateAudioSource(clip);
+            newSource.volume = 1.5f;
             newSource.Play();
             StartCoroutine(CleanupAudioSource(newSource));
         }
