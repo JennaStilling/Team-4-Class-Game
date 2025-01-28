@@ -1,0 +1,23 @@
+{ "ingredients" : [
+    {"id" : 1, "name" :  "Sunflower"},
+    {"id" : 2, "name" :  "Rose"},
+    {"id" : 3, "name" :  "Wheat"},
+    {"id" : 4, "name" :  "Dandelion"},
+    {"id" : 5, "name" :  "Juniper Berry"},
+    {"id" : 6, "name" :  "Blue Bell"},
+    {"id" : 7, "name" :  "Mushroom"},
+    {"id" : 8, "name" :  "Water Lily"},
+    {"id" : 9, "name" :  "Shell"},
+    {"id" : 10, "name" :  "River Weed"},
+    {"id" : 11, "name" :  "Algae"},
+    {"id" : 12, "name" :  "Fungus"},
+    {"id" : 13, "name" :  "Spider Web"},
+    {"id" : 14, "name" :  "Violet"},
+    {"id" : 15, "name" :  "Holly Berry"},
+    {"id" : 16, "name" :  "Pine Cone"},
+    {"id" : 17, "name" :  "Bone"},
+    {"id" : 18, "name" :  "Water"},
+    {"id" : 19, "name" :  "Murky Water"},
+    {"id" : 20, "name" :  "Ice"}
+  ]
+}
