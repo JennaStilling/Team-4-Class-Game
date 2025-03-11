@@ -605,7 +605,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 1
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1487,6 +1487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
+  _touchFeedbackScale: 0.9
+  _touchFeedbackDuration: 0.1
 --- !u!114 &119966755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5356,6 +5358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
+  _touchFeedbackScale: 0.9
+  _touchFeedbackDuration: 0.1
 --- !u!65 &532787398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9719,6 +9723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerOne: {fileID: 144061665}
   layerTwo: {fileID: 947780296}
+  swipeThreshold: 50
+  animationDuration: 0.3
 --- !u!114 &1001651207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12859,6 +12865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
+  _touchFeedbackScale: 0.9
+  _touchFeedbackDuration: 0.1
 --- !u!114 &1330822320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16750,6 +16758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
+  _touchFeedbackScale: 0.9
+  _touchFeedbackDuration: 0.1
 --- !u!114 &1840809260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17909,6 +17919,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
+  _touchFeedbackScale: 0.9
+  _touchFeedbackDuration: 0.1
 --- !u!61 &1977533263
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19003,6 +19015,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
+  _touchFeedbackScale: 0.9
+  _touchFeedbackDuration: 0.1
 --- !u!114 &2051328135
 MonoBehaviour:
   m_ObjectHideFlags: 0

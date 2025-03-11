@@ -4,17 +4,21 @@ using UnityEngine.UI;
 
 namespace Jenna
 {
-    public class DragDropUI : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class DragDropUI : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerDownHandler
     {
         [SerializeField] private Canvas _canvas;
         private RectTransform _rectTransform;
         private CanvasGroup _canvasGroup;
         private GameObject _draggingObject;
+        private bool _isDragging;
+        private float _touchStartTime;
+        private const float TOUCH_THRESHOLD = 0.2f;
         
         private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
             _canvasGroup = GetComponent<CanvasGroup>();
+            _isDragging = false;
         }
 
         public void SetCanvas(Canvas canvas)
@@ -27,8 +31,17 @@ namespace Jenna
             return _draggingObject;
         }
 
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            _touchStartTime = Time.time;
+        }
+
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if (Time.time - _touchStartTime < TOUCH_THRESHOLD)
+                return;
+
+            _isDragging = true;
             _draggingObject = Instantiate(gameObject, _canvas.transform);
 
             if (_draggingObject.name.Equals("UI_PotionBrewing(Clone)"))
@@ -53,6 +66,10 @@ namespace Jenna
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            if (!_isDragging)
+                return;
+
+            _isDragging = false;
             if (_draggingObject != null)
             {
                 Destroy(_draggingObject);
@@ -82,6 +99,9 @@ namespace Jenna
 
         public void OnDrag(PointerEventData eventData)
         {
+            if (!_isDragging)
+                return;
+
             if (_draggingObject != null)
             {
                 RectTransform draggingRectTransform = _draggingObject.GetComponent<RectTransform>();
